@@ -16,4 +16,6 @@ Rails.application.routes.draw do
     resource :email_verification, only: [:edit, :create]
     resource :password_reset,     only: [:new, :edit, :create, :update]
   end
+
+  resources :user, only: [:show]
 end
