@@ -4,31 +4,33 @@
     <p>Find me in app/views/user/show.html.erb</p>
   </div>
 
-  <div>
-    <p style="color: green"><%= notice %></p>
-
-    <p>Signed as <%= Current.user.email %></p>
-
+  <% if current_user %>
     <div>
-      <%= link_to "Change email address", edit_identity_email_path %>
-    </div>
+      <p style="color: green"><%= notice %></p>
 
-    <div>
-      <%= link_to "Change password", edit_password_path %>
-    </div>
+      <p>Signed as <%= Current.user.email %></p>
 
-    <div>
-      <%= link_to "Devices & Sessions", sessions_path %>
-    </div>
+      <div>
+        <%= link_to "Change email address", edit_identity_email_path %>
+      </div>
 
-    <div>
-      <%# link_to "Activity Log", authentications_events_path %>
-    </div>
+      <div>
+        <%= link_to "Change password", edit_password_path %>
+      </div>
 
-    <div>
-      <%# link_to "Two-Factor Authentication", new_two_factor_authentication_totp_path %>
-    </div>
+      <div>
+        <%= link_to "Devices & Sessions", sessions_path %>
+      </div>
 
-    <%= button_to "Log out", Current.session, method: :delete %>
-  </div>
+      <div>
+        <%# link_to "Activity Log", authentications_events_path %>
+      </div>
+
+      <div>
+        <%# link_to "Two-Factor Authentication", new_two_factor_authentication_totp_path %>
+      </div>
+
+      <%= button_to "Log out", Current.session, method: :delete %>
+    </div>
+  <% end %>
 </div>
