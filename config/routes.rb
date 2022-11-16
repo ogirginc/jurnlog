@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   end
 
   resources :user, only: [:show]
+
+  resources :posts
 end
