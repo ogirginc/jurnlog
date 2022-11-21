@@ -11,3 +11,11 @@
 }
 
 */
+
+@layer base {
+  ul, ol {
+    list-style: revert;
+  }
+}
+
+@import 'actiontext.css';
