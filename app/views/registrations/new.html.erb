@@ -30,6 +30,11 @@
   </div>
 
   <div>
+    <%= form.label :invitation_code, style: "display: block" %>
+    <%= form.text_field :invitation_code, required: true, autocomplete: "off" %>
+  </div>
+
+  <div>
     <%= form.submit "Sign up" %>
   </div>
 <% end %>

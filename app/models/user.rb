@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  include Invitable
+
   has_secure_password
 
   has_many :email_verification_tokens, dependent: :destroy
