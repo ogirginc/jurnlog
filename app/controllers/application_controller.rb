@@ -12,11 +12,8 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate
-    if (session = Session.find_by_id(cookies.signed[:session_token]))
-      Current.session = session
-    else
-      redirect_to sign_in_path
-    end
+    session = Session.find_by_id(cookies.signed[:session_token])
+    Current.session = session if session.present?
   end
 
   def set_current_request_details
