@@ -61,6 +61,10 @@ gem 'image_processing', '~> 1.2'
 # An authentication system generator for Rails applications.
 gem 'authentication-zero'
 
+# Official integration library for using Rails and ActionMailer with the
+# Postmark HTTP API [https://github.com/activecampaign/postmark-rails]
+gem 'postmark-rails'
+
 group :development, :test do
   # https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
