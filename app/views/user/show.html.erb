@@ -1,7 +1,15 @@
 <div class="flex justify-between flex-1">
-  <div>
-    <h1 class="font-bold text-4xl">User#show</h1>
-    <p>Find me in app/views/user/show.html.erb</p>
+  <div class="flex flex-col">
+    <div>
+      <h1 class="font-bold text-4xl">User#show</h1>
+      <p>Find me in app/views/user/show.html.erb</p>
+    </div>
+
+    <div>
+      <% @posts.each do |post| %>
+        <%= link_to post.title, post_path(post.id) %>
+      <% end %>
+    </div>
   </div>
 
   <% if current_user %>
