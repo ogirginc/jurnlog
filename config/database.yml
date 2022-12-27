@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: jurnlog_production
+  database: <%= ENV['DATABASE_URL'] %>
   username: jurnlog
   password: <%= ENV["JURNLOG_DATABASE_PASSWORD"] %>

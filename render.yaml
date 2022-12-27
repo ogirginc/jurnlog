@@ -1,3 +1,6 @@
+databases:
+  - name: postgresql
+
 services:
   - type: redis
     name: sidekiq-redis
