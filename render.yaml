@@ -1,5 +1,6 @@
 databases:
   - name: postgresql
+    region: ohio
 
 services:
   - type: redis
