@@ -2,7 +2,7 @@
 
 # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'posts#index'
 
   get  'sign_in', to: 'sessions#new'
   post 'sign_in', to: 'sessions#create'
