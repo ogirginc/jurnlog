@@ -1,11 +1,13 @@
 databases:
   - name: postgresql
     region: frankfurt
+    plan: free
 
 services:
   - type: web
     name: jurnlog # Part of URL.
     region: frankfurt
+    plan: free
     env: ruby
     buildCommand: bundle install; bundle exec rake assets:precompile; bundle exec rake assets:clean; bundle exec rake db:migrate;
     startCommand: bundle exec puma -C config/puma.rb
