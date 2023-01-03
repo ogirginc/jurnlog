@@ -23,8 +23,23 @@ class RegistrationsController < ApplicationController
 
   private
 
+  def permitted_params
+    params.permit(
+      :authenticity_token,
+      :invitation_code,
+      :commit,
+      :email,
+      :password,
+      :password_confirmation
+    )
+  end
+
   def user_params
-    params.permit(:email, :password, :password_confirmation)
+    permitted_params.slice(
+      :email,
+      :password,
+      :password_confirmation
+    )
   end
 
   def send_email_verification
